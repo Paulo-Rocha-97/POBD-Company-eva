@@ -1,0 +1,16 @@
+Efect_hours		- Actual working hours 
+Relative_salary		- Compensation to work 
+Schedule_flex		- Schedule flexibility
+Work_env		- Work enviroment
+Company_phone		- Existence of company phone
+Company_insurance	- Existence of company insurance
+Company_pc		- Existence of company pc
+Company_car		- Existence of company car
+Work_safety_finance	- Financial safety at work
+Work_safety_fisical	- Fisical safety at work
+Effort			- Amount of effort required compared to what expected
+Discrimination		- Gender equuality/ discrimination against minorities
+Carrer_opportunity	- Carrer advancement prespective
+Respon_level		- Responsability level 
+Commute			- Ease of commute 
+
