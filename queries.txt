@@ -1,0 +1,31 @@
+SEARCH: (user selecionou um minimo para os parametros A>a e B>b, c=0 ,d=0, ...)
+
+Select company_name, parametros
+from company
+where A>a
+and B>b;
+and C>c
+...
+
+LOGIN: (ver pass)
+
+Select password
+from User_
+where UserID=UserID_input
+
+VERIFICAR SE É ALUMNI (ORG é equivalente)
+
+select AlumniID
+from Alumni
+
+DROPDOWN DE COMPANIES PARA ALUMNI
+
+select company_name
+from company
+
+ORG MUDA CONTACTO (info é igual. ORG escolhe company_input e poe input_contact como novo contacto) 
+
+Uptdate Company
+set contact_info="input_cotanct"
+where company_name="input_company"
+ 
