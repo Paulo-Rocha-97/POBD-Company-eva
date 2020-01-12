@@ -18,7 +18,7 @@ VERIFICAR SE É ALUMNI (ORG é equivalente)
 select AlumniID
 from Alumni
 
-DROPDOWN DE COMPANIES PARA ALUMNI
+DROPDOWN DE COMPANIES PARA ALUMNI e ORG
 
 select company_name
 from company
@@ -27,5 +27,18 @@ ORG MUDA CONTACTO (info é igual. ORG escolhe company_input e poe input_contact 
 
 Uptdate Company
 set contact_info="input_cotanct"
-where company_name="input_company"
- 
+where companyID="input_company"
+
+MORE=MOSTRAR DETALHES DA COMPANY
+
+select company_name, contact_info, ... merdas todas menos ID
+from company
+where companyID="input_company"
+
+UTILIZADOR ATUALIZA PHONE(email é igual)
+
+Update User
+set phone="input_phone"
+where userID="logged_userID"
+
+
