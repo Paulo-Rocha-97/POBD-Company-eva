@@ -4,6 +4,8 @@
 /*  DBMS       : MySql 						*/
 /* ---------------------------------------------------- */
 
+SET FOREIGN_KEY_CHECKS=0 
+;
 DROP TABLE IF EXISTS Alumni CASCADE
 ;
 DROP TABLE IF EXISTS Company CASCADE
@@ -28,6 +30,7 @@ CREATE TABLE User_
 	Name_user varchar(255) NULL,
 	Telephone_user varchar(255) NULL,
 	UserID varchar(255) NOT NULL,
+    Pass varchar(255) NOT NULL,
 	CONSTRAINT PK_User_ PRIMARY KEY (UserID ASC)
 )
 ;
@@ -40,19 +43,6 @@ CREATE TABLE Alumni
 )
 ;
 
-CREATE TABLE Evaluate
-(
-	AlumniID varchar(255) NOT NULL,
-	CompanyID varchar(255) NOT NULL,
-    Av_salary_ varchar(255) NULL,
-    Efect_hours_ varchar(255) NULL,
-	primary key (AlumniID,CompanyID),
-    foreign key(AlumniID)
-		references Alumni (AlumniID),
-	foreign key(CompanyID)
-		references Company (CompanyID)
-)
-;
 CREATE TABLE Organization_
 (	
 	OrganizationID varchar(255) NOT NULL references User_(UserID),
@@ -74,11 +64,19 @@ CREATE TABLE Company
 (
 	CompanyID varchar(255) NOT NULL,
     Name_company varchar(255) NULL,
+    Zone varchar(255) NUll,
+    Dim varchar(255) NULL,
+    Sector varchar(255) NULL,
+    Hiring varchar(255) NULL,
 	Contact_info varchar(255) NULL,
 	General_info varchar(255) NULL,
-    Eval_total varchar(255) NULL,
-	Av_salary varchar(255) NULL,
+	Av_score varchar(255) NULL, 
+    Av_salary varchar(255) NULL,
     Efect_hours varchar(255) NULL,
+    Work_env varchar(255) NULL,
+    Discrimination varchar(255) NULL,
+    Carrer_oppportunity varchar(255) NULL,
+    Schedule_flex varchar(255) NULL,
     PRIMARY KEY (CompanyID)
 )
 ;
@@ -87,7 +85,6 @@ CREATE TABLE Manages
 (
 	OrganizationID varchar(255) NOT NULL,
 	CompanyID varchar(255) NOT NULL,
-    Contact_change varchar(255) NULL,
     Info_change varchar(255) NULL,
     Time_ varchar(255) NULL,
     primary key (OrganizationID,CompanyID),
@@ -97,49 +94,72 @@ CREATE TABLE Manages
 		references Company (CompanyID)
 )
 ;
-
-LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\User_.csv'
-INTO TABLE User_
-FIELDS TERMINATED BY ';'
-LINES TERMINATED BY '\r\n'
+CREATE TABLE Evaluate
+(
+	AlumniID varchar(255) NOT NULL,
+	CompanyID varchar(255) NOT NULL,
+    Av_score varchar(255) NULL, 
+    Av_salary varchar(255) NULL,
+    Efect_hours varchar(255) NULL,
+    Work_env varchar(255) NULL,
+    Discrimination varchar(255) NULL,
+    Carrer_oppportunity varchar(255) NULL,
+    Schedule_flex varchar(255) NULL,
+	primary key (AlumniID,CompanyID),
+    foreign key(AlumniID)
+		references Alumni (AlumniID),
+	foreign key(CompanyID)
+		references Company (CompanyID)
+)
+;
+SET FOREIGN_KEY_CHECKS=1 
 ;
 
-LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\Alumni.csv'
-INTO TABLE Alumni
-FIELDS TERMINATED BY ';'
-LINES TERMINATED BY '\r\n'
+INSERT INTO User_ VALUES (24,'joao@ist.utl.pt','Joao Silva',969696969,78322,'password'),
+(28,'pedro@ist.utl.pt','Pedro Goncalves',969696967,84342,'password'),
+(26,'miguel@ist.utl.pt','Miguel Duarte',969696966,84310,'password'),
+(27,'Carlos@ist.utl.pt','Carlos Bettencourt',969696965,60321,'password'),
+(22,'bruno@ist.utl.pt','Bruno Grosso',969696964,84223,'password'),
+(22,'Paulo@ist.utl.pt','Paulo Calhau',969696962,84322,'password'),
+(18,'Baba@ist.utl.pt','Barbara Ribeiro',969696963,84502,'password'),
+(20,'Jess@ist.utl.pt','Jessica Caupers',969696961,90515,'password'),
+(19,'Tony@ist.utl.pt','Antonio Coimbra',969696960,93496,'password')
 ;
 
-LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\Evaluate.csv'
-INTO TABLE Evaluate
-FIELDS TERMINATED BY ';'
-LINES TERMINATED BY '\r\n'
+INSERT INTO Student VALUES (84502,'P',5),
+(90515,'L',3),
+(93496,'L',2),
+(84223,'S',5),
+(84322,'S',5)
 ;
 
-LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\Organization_.csv'
-INTO TABLE Organization_
-FIELDS TERMINATED BY ';'
-LINES TERMINATED BY '\r\n'
+INSERT INTO Alumni VALUES (78322,1),
+(84342,4),
+(84310,2),
+(60321,3)
 ;
 
-LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\Student.csv'
-INTO TABLE Student
-FIELDS TERMINATED BY ';'
-LINES TERMINATED BY '\r\n'
+INSERT INTO Company Values (1,'Vidros Rocha.lda','N','1-50','Production',1,'291291291','Glass manufacturing with stone age technologic',6,5,4,8,3,4,7),
+(2,'Garrafeira Alves.sa','C','500+','Production',1,'244764512','This company began in 1847, with the purpose of bottling Portugal...',7,6,2,6,10,8,5),
+(3,'Ilhas','I','1-50','Commerce',0,'219947852','Samll network of supermarkets, with the best selling product being the delicious dog croquette...',7,3,8,8,3,5,8),
+(4,'Bolos do Solipa','S','51-500','Logistics',1,'1844450220','China manufactured cakes, amazing taste of beer....',3,2,0,4,10,5,0),
+(5,'Capote Coelhos.lda','','','','','','',5,2,7,4,5,8,4)
+(6,'RIN','E','1-50','Systems',0,'123123123','Electric distribution national wide',9,8,10,5,4,9,4)
 ;
 
-LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\Company.csv'
-INTO TABLE Company
-FIELDS TERMINATED BY ';'
-LINES TERMINATED BY '\r\n'
+INSERT INTO Organization_ VALUES (84223,0),
+(84322,1)
 ;
 
-LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\Manages.csv'
-INTO TABLE Manages
-FIELDS TERMINATED BY ';'
-LINES TERMINATED BY '\r\n'
+INSERT INTO Manages VALUES (84223,4,1,0,'11:11,2'),
+(84322,2,1,1,'11:11,2'),
+(84223,1,0,1,'11:11,2'),
+(84322,5,0,1,'11:11,2')
 ;
 
+INSERT INTO Evaluate VALUES (78322,1,3,8),
+(84342,2,8,3)
+;
 
 
 
