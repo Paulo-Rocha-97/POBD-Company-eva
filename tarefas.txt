@@ -1,0 +1,7 @@
+relevance-paulo
+us case-bruno
+class-paulo
+ER-bruno
+db implementation and queries-bruno, paulo
+app user manual-miguel
+mysql programmer tips-paulo
