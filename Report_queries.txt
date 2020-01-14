@@ -1,0 +1,70 @@
+QUERIES
+
+Login
+
+To Login the only thing necessary is to do is compare the password that is registred under the UserID that is inputted, with the inputted password by the user. So to extract that registred password it's just needed the following:
+
+%POR QUERY
+
+Search Results
+
+To search companies we want to select the companies that verify the conditions that come from the filters. Out of those we want to show the name (Name_company), the average score (Av_score), the zone (Zone), the dimension (Dim) and the sector (Sector).
+Since not every filter option has necessarily an input from the user (non-filtered), the query changes acording to that. For the numerical parameters we consider them 0 when that happens, which doesn't require changing the query. 
+When it's something like zone (same for dimension, sector) and the user has a preference, the program has a \textit{if} constraint that adds " AND Zone='inputted zone by user'" to query.
+
+%POR QUERY
+
+Show Company Info and Scores
+
+If the user wishes to know more about one company besides what "Search Results" query shows, mainly all the scores and contact info, then the query for that consists on selecting every atribute of the chosen company, besides the ID.
+
+%POR QUERY
+
+Verify User Type
+
+To check what type a user is after the Login, in order to grant him access to what he should have access to, two queries are made. 
+To check if he is an Student it's done the following.
+
+%select StudentID
+%from Student
+%where StudentID='inputted ID'
+
+If he's not a student we then check if he is a member of organization and find out what type of clearance he has.
+
+%select OrganizationID, Clearance
+%from Organization
+%where OrganizationID='inputted ID'
+
+If nothing comes out of this query, thenn the user is an Alumni.
+
+
+Evaluate
+
+In order for an Alumni to evaluate a company he first should select out of the existing companies in the database which on he will evaluate.
+Then store what how he scored the company in the Evaluate table.
+
+% insert into Evaluate values (AlumniID, CompanyID, Av_score, Av_salary, Effect_hours, Work_env, Discrimination, Career_opportunity, Schedule_flex)*
+
+*All these values are inputted values by the Alumni, except for the AlumniID and CompanyID which come directly from the program.
+
+
+Change Company Info
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
