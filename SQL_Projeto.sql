@@ -143,22 +143,22 @@ INSERT INTO Company Values (1,'Vidros Rocha.lda','N','1-50','Production',1,'2912
 (2,'Garrafeira Alves.sa','C','500+','Production',1,'244764512','This company began in 1847, with the purpose of bottling Portugal...',7,6,2,6,10,8,5),
 (3,'Ilhas','I','1-50','Commerce',0,'219947852','Samll network of supermarkets, with the best selling product being the delicious dog croquette...',7,3,8,8,3,5,8),
 (4,'Bolos do Solipa','S','51-500','Logistics',1,'1844450220','China manufactured cakes, amazing taste of beer....',3,2,0,4,10,5,0),
-(5,'Capote Coelhos.lda','','','','','','',5,2,7,4,5,8,4)
-(6,'RIN','E','1-50','Systems',0,'123123123','Electric distribution national wide',9,8,10,5,4,9,4)
+(5,'Capote Coelhos.lda','','','','','','',5,2,7,4,5,8,4),
+(6,'RIN','E','1-50','Systems',0,'123123123','Electric distribution nation wide',9,8,10,5,4,9,4)
 ;
 
 INSERT INTO Organization_ VALUES (84223,0),
 (84322,1)
 ;
 
-INSERT INTO Manages VALUES (84223,4,1,0,'11:11,2'),
-(84322,2,1,1,'11:11,2'),
-(84223,1,0,1,'11:11,2'),
-(84322,5,0,1,'11:11,2')
+INSERT INTO Manages VALUES (84223,4,0,'11:11,2'),
+(84322,2,1,'11:11,2'),
+(84223,1,1,'11:11,2'),
+(84322,5,1,'11:11,2')
 ;
 
-INSERT INTO Evaluate VALUES (78322,1,3,8),
-(84342,2,8,3)
+INSERT INTO Evaluate VALUES (78322,1,1,3,8,9,5,6,4),
+(84342,2,2,8,3,1,8,8,5)
 ;
 
 
