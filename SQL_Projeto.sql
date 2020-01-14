@@ -64,6 +64,7 @@ CREATE TABLE Company
 (
 	CompanyID varchar(255) NOT NULL,
     Name_company varchar(255) NULL,
+    Number_eval varchar(255) NULL,
     Zone varchar(255) NUll,
     Dim varchar(255) NULL,
     Sector varchar(255) NULL,
@@ -100,10 +101,10 @@ CREATE TABLE Evaluate
 	CompanyID varchar(255) NOT NULL,
     Av_score varchar(255) NULL, 
     Av_salary varchar(255) NULL,
-    Efect_hours varchar(255) NULL,
+    Effect_hours varchar(255) NULL,
     Work_env varchar(255) NULL,
     Discrimination varchar(255) NULL,
-    Carrer_oppportunity varchar(255) NULL,
+    Carrer_opportunity varchar(255) NULL,
     Schedule_flex varchar(255) NULL,
 	primary key (AlumniID,CompanyID),
     foreign key(AlumniID)
@@ -139,13 +140,13 @@ INSERT INTO Alumni VALUES (78322,1),
 (60321,3)
 ;
 
-INSERT INTO Company Values (1,'Vidros Rocha.lda','N','1-50','Production',1,'291291291','Glass manufacturing with stone age technologic',6,5,4,8,3,4,7),
-(2,'Garrafeira Alves.sa','C','500+','Production',1,'244764512','This company began in 1847, with the purpose of bottling Portugal...',7,6,2,6,10,8,5),
-(3,'Ilhas','I','1-50','Commerce',0,'219947852','Samll network of supermarkets, with the best selling product being the delicious dog croquette...',7,3,8,8,3,5,8),
-(4,'Bolos do Solipa','S','51-500','Logistics',1,'1844450220','China manufactured cakes, amazing taste of beer....',3,2,0,4,10,5,0),
-(5,'Capote Coelhos.lda','','','','','','',5,2,7,4,5,8,4),
-(6,'RIN','E','1-50','Systems',0,'123123123','Electric distribution nation wide',9,8,10,5,4,9,4),
-(7,'Macro-Preço','C','51-500','Commerce',1,'234765981','Average items at Luxury prices for better profit margins',8,4,7,5,3,9,9)
+INSERT INTO Company Values (1,'Vidros Rocha.lda',50,'N','1-50','Production',1,'291291291','Glass manufacturing with stone age technologic',6,5,4,8,3,4,7),
+(2,'Garrafeira Alves.sa',1,'C','500+','Production',1,'244764512','This company began in 1847, with the purpose of bottling Portugal...',7,6,2,6,10,8,5),
+(3,'Ilhas',3,'I','1-50','Commerce',0,'219947852','Samll network of supermarkets, with the best selling product being the delicious dog croquette...',7,3,8,8,3,5,8),
+(4,'Bolos do Solipa',40,'S','51-500','Logistics',1,'1844450220','China manufactured cakes, amazing taste of beer....',3,2,0,4,10,5,0),
+(5,'Capote Coelhos.lda',12,'','','','','','',5,2,7,4,5,8,4),
+(6,'RIN',13,'E','1-50','Systems',0,'123123123','Electric distribution nation wide',9,8,10,5,4,9,4),
+(7,'Macro-Preço',80,'C','51-500','Commerce',1,'234765981','Average items at Luxury prices for better profit margins',8,4,7,5,3,9,9)
 ;
 
 INSERT INTO Organization_ VALUES (84223,0),
