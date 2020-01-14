@@ -144,7 +144,8 @@ INSERT INTO Company Values (1,'Vidros Rocha.lda','N','1-50','Production',1,'2912
 (3,'Ilhas','I','1-50','Commerce',0,'219947852','Samll network of supermarkets, with the best selling product being the delicious dog croquette...',7,3,8,8,3,5,8),
 (4,'Bolos do Solipa','S','51-500','Logistics',1,'1844450220','China manufactured cakes, amazing taste of beer....',3,2,0,4,10,5,0),
 (5,'Capote Coelhos.lda','','','','','','',5,2,7,4,5,8,4),
-(6,'RIN','E','1-50','Systems',0,'123123123','Electric distribution nation wide',9,8,10,5,4,9,4)
+(6,'RIN','E','1-50','Systems',0,'123123123','Electric distribution nation wide',9,8,10,5,4,9,4),
+(7,'Macro-Preço','C','51-500','Commerce',1,'234765981','Average items at Luxury prices for better profit margins',8,4,7,5,3,9,9)
 ;
 
 INSERT INTO Organization_ VALUES (84223,0),
