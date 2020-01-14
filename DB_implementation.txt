@@ -1,0 +1,17 @@
+DROP existing DB-> Create entity tables -> Generalization done by associating PK of user with PK of type (AlumniID etc.)
+-> Create Relation tables -> Populate tables
+
+% SET FOREIGN KEYS?????
+
+The first thing the code does is remove the existing tables that are going to be used.
+
+% CODIGO DROP TABLES 
+
+Then the new tables are created by defining the its name, primary key, atributes and the type of variable each atribute is.
+Because each type of student (Alumni, Organization member and Student) is represented by a table, but their primary key is the \textit{UserID}, those tables also had that same key but with a different name. That association is done through the command \textit{references}
+
+% CODIGO CREATE TABLES
+
+The last part was just populating the tables with information.
+
+% CODIGO INSERT INTO

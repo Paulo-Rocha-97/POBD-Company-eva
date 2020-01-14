@@ -1,5 +1,5 @@
 relevance-paulo
-us case-bruno
+us case-bruno $$
 class-paulo
 ER-bruno
 db implementation and queries-bruno, paulo
